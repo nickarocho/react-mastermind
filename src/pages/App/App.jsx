@@ -151,6 +151,10 @@ class App extends Component {
     this.setState({user: userService.getUser()});
   }
 
+  handleLogin = () => {
+    this.setState({user: userService.getUser()});
+  }
+
   /*---------- Lifecycle Methods ----------*/
 
   componentDidMount() {
@@ -192,11 +196,11 @@ class App extends Component {
             <Route exact path='/signup' render={(props) => 
               <SignupPage {...props}
                 handleSignup={this.handleSignup}
-              />
-            }/>
+                />
+              }/>
             <Route exact path='/login' render={() => 
               <LoginPage
-                
+                handleLogin={this.handleLogin}
               />
             }/>
             <Route exact path='/topscores' component={TopScoresPage} />
