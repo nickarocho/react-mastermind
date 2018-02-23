@@ -168,6 +168,7 @@ class App extends Component {
                 interval={1000}
                 handleTick={this.handleTick}
                 isTiming={!this.state.finalTime}
+                user={this.state.user}
               />
             }/>
             <Route exact path='/settings' render={() => 

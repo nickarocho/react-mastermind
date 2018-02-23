@@ -15,7 +15,7 @@ const GamePage = (props) => {
 
   return (
     <div className="GamePage">
-      <NavBar />
+      <NavBar user={props.user}/>
       <div className="GamePage-game">
         <GameBoard
           guesses={props.guesses}
