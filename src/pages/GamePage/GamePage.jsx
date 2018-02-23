@@ -15,7 +15,10 @@ const GamePage = (props) => {
 
   return (
     <div className="GamePage">
-      <NavBar user={props.user}/>
+      <NavBar 
+        user={props.user}
+        handleLogOut={props.handleLogOut}
+        />
       <div className="GamePage-game">
         <GameBoard
           guesses={props.guesses}

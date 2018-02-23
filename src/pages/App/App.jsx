@@ -142,6 +142,11 @@ class App extends Component {
     }));
   }
 
+  handleLogOut = () => {
+    userService.logOut();
+    this.setState({user: null});
+  }
+
   /*---------- Lifecycle Methods ----------*/
 
   componentDidMount() {
@@ -167,6 +172,7 @@ class App extends Component {
                 elapsedTime={this.state.elapsedTime}
                 interval={1000}
                 handleTick={this.handleTick}
+                handleLogOut={this.handleLogOut}
                 isTiming={!this.state.finalTime}
                 user={this.state.user}
               />
