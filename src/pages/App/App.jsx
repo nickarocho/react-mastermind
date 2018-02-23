@@ -5,6 +5,7 @@ import {
   Route
 } from 'react-router-dom';
 import './App.css';
+import userService from '../../utils/userService';
 import GamePage from '../GamePage/GamePage';
 import SettingsPage from '../SettingsPage/SettingsPage';
 import SignupPage from '../SignupPage/SignupPage';
@@ -142,6 +143,11 @@ class App extends Component {
   }
 
   /*---------- Lifecycle Methods ----------*/
+
+  componentDidMount() {
+    let user = userService.getUser();
+    this.setState({user});
+  }
 
   render() {
     return (
