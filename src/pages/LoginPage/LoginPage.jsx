@@ -5,7 +5,9 @@ import './LoginPage.css';
 const LoginPage = (props) => {
   return (
     <div className='LoginPage'>
-      <LoginForm handleLogin={props.handleLogin} />
+      <LoginForm
+        history={props.history} // could have used spread operator
+        handleLogin={props.handleLogin} />
     </div>
   );
 };

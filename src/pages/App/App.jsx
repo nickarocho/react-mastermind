@@ -194,12 +194,14 @@ class App extends Component {
               />
             }/>
             <Route exact path='/signup' render={(props) => 
-              <SignupPage {...props}
+              <SignupPage 
+                {...props}
                 handleSignup={this.handleSignup}
                 />
               }/>
-            <Route exact path='/login' render={() => 
-              <LoginPage
+            <Route exact path='/login' render={(props) => 
+              <LoginPage 
+                {...props}
                 handleLogin={this.handleLogin}
               />
             }/>
