@@ -2,7 +2,8 @@ import React, {Component} from 'react';
 import {
   BrowserRouter as Router,
   Switch,
-  Route
+  Route,
+  Redirect
 } from 'react-router-dom';
 import './App.css';
 import userService from '../../utils/userService';
@@ -205,7 +206,12 @@ class App extends Component {
                 handleLogin={this.handleLogin}
               />
             }/>
-            <Route exact path='/topscores' component={TopScoresPage} />
+            <Route exact path='/topscores' render={() => ( 
+              userService.getUser() ? 
+                <TopScoresPage />
+              :
+                <Redirect to='/login' />
+            )} />
           </Switch>
         </Router>
       </div>
